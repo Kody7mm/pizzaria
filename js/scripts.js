@@ -1,33 +1,9 @@
-function Pizzaria() {
-  this.currendId = 0;
-}
-
-Pizzaria.prototype.assignId = function () {
-  this.currentId += 1;
-  return this.currentId; // remove later
-}
-
 // Business logic for pizzaria
-function reciept(size, cost, toppings) {
+function pizza(size, topping1, topping2, topping3) {
   this.size = size;
-  this.toppings = toppings;
-  this.cost = 0;
-}
-function size(small, medium, large, family) {
-  this.small = small;
-  this.medium = medium;
-  this.large = large;
-  this.family = family;
-}
-function toppings(sausage, pepperoni, mushrooms, onions, olives, jalapenos, bacon) {
-  this.sausage = sausage;
-  this.pepperoni = pepperoni;
-  this.mushrooms = mushrooms;
-  this.onions = onions;
-  this.olives = olives;
-  this.jalapenos = jalapenos;
-  this.bacon = bacon;
-  this.toppingTotal = sausage + pepperoni + mushrooms + onions + olives + jalapenos + bacon;
+  this.topping1 = topping1;
+  this.topping2 = topping2;
+  this.topping3 = topping3;
 }
 
 reciept.prototype.toppings = function () {
@@ -38,18 +14,6 @@ reciept.prototype.toppings = function () {
     this.price += 1.00;
   }
   if (this.mushrooms === "mushrooms") {
-    this.price += 1.00;
-  }
-  if (this.onions === "onions") {
-    this.price += 1.00;
-  }
-  if (this.olives === "olives") {
-    this.price += 1.00;
-  }
-  if (this.jalapenos === "jalapenos") {
-    this.price += 1.00;
-  }
-  if (this.bacon === "bacon") {
     this.price += 1.00;
   }
 
@@ -63,15 +27,11 @@ reciept.prototype.toppings = function () {
     if (this.large === "large") {
       this.price += 9.00;
     }
-    if (this.family === "family") {
-      this.price += 12.00;
-    }
   };
 
-  Pizza.prototype.price = function(toppings, size){
-    let toppingPrice = toppings.length; 
-    let sizePrice = size.length;
-    return 5 + toppingPrice + sizePrice;
+  Pizza.prototype.totalCost = function () {
+    return (this.sizePrice + this.toppingOne + this.toppingTwo)
+  }
 
   //business logic for users
 
