@@ -68,6 +68,10 @@ reciept.prototype.toppings = function () {
     }
   };
 
+  Pizza.prototype.price = function(toppings, size){
+    let toppingPrice = toppings.length; 
+    let sizePrice = size.length;
+    return 5 + toppingPrice + sizePrice;
 
   //business logic for users
 
