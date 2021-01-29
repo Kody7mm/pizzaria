@@ -11,7 +11,7 @@ Pizzaria.prototype.assignId = function () {
 function reciept(size, cost, toppings) {
   this.size = size;
   this.toppings = toppings;
-  this.cost = cost;
+  this.cost = 0;
 }
 function size(small, medium, large, family) {
   this.small = small;
@@ -31,7 +31,6 @@ function toppings(sausage, pepperoni, mushrooms, onions, olives, jalapenos, baco
 }
 
 reciept.prototype.toppings = function () {
-  this.price = this.size + toppingTotal;
   if (this.sausage === "sausage") {
     this.price += 1.00;
   }
@@ -55,7 +54,6 @@ reciept.prototype.toppings = function () {
   }
 
   reciept.prototype.size = function () {
-    this.price = 5.00;
     if (this.small === "small") {
       this.price += 3.00;
     }
@@ -69,3 +67,7 @@ reciept.prototype.toppings = function () {
       this.price += 12.00;
     }
   };
+
+
+  //business logic for users
+
