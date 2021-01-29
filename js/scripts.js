@@ -7,13 +7,13 @@ function pizza(size, topping1, topping2, topping3) {
 }
 
 reciept.prototype.toppings = function () {
-  if (this.sausage === "sausage") {
+  if (this.topping1 === "topping1") {
     this.price += 1.00;
   }
-  if (this.pepperoni === "pepperoni") {
+  if (this.topping2 === "topping2") {
     this.price += 1.00;
   }
-  if (this.mushrooms === "mushrooms") {
+  if (this.topping3 === "topping3") {
     this.price += 1.00;
   }
 
