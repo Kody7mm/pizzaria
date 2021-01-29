@@ -20,20 +20,34 @@ function size(small, medium, large, family) {
   this.family = family;
 }
 function toppings(pepperoni, cheese, bacon, olives, sausage, jalapenos) {
-  this.pepperoni = pepperoni;
-  this.cheese = cheese;
-  this.bacon = bacon;
-  this.olives = olives;
   this.sausage = sausage;
+  this.pepperoni = pepperoni;
+  this.mushrooms = mushrooms;
+  this.onions = onions;
+  this.olives = olives;
   this.jalapenos = jalapenos;
+  this.bacon = bacon;
 } 
 
 reciept.prototype.toppings = function() {
-  this.toppings = this.size + toppings;
-  if ()
-}
+  this.price = 5.00;
+  if (this.pepperoni === "pepperoni") {
+    this.price += 1.00;
+  }
+  if (this.bacon === "bacon") {
+    this.price += 1.00;
+  }
+  if (this.olives === "olives") {
+    this.price += 1.00;
+  }
+  if (this.sausage === "sausage") {
+    this.price += 1.00;
+  }
+  if (this.jalapenos === "jalapenos") {
+    this.price += 1.00;
+};
 
-reciept.prototype.pizzaCost = function() {
+reciept.prototype.size = function() {
   this.price = 5.00;
   if (this.small === "small") {
     this.price += 3.00;
