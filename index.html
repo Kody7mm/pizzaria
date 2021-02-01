@@ -1,57 +1,58 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
 <head>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Document</title>
+  <title>Pizzaria</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Pizzaria:</h1>
-    <div class="row">
-      <div class="col-md-4">
+    <div class="form">
+      <div class="col-md-8 mb-5">
+        <h3>Pizza Online Order</h3>
+        <h5>Place Your Order Below:</h5>
         <hr>
-        <h2>Select a size:</h2>
-        <form id="pizza-selection">
-          <select class="form-control" id="size">
-            <option selected="selected"></option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-          <div class="form-group">
-            <h2>Select :</h2>
+        <form id="order-form" id="size">
+          <h5>Size:</h5>
+          <div class="radio">
             <label>
-              <input name="topping" type="checkbox" value=1>
-              Sausage
+              <input type="radio" name="size" value="small" id="small">
+              Small $10
             </label>
-            <label>
-              <input name="topping" type="checkbox" value=1>
-              Pepperoni
-            </label>
-            <label>
-              <input name="topping" type="checkbox" value=1>
-              Mushrooms
-            </label>
-            <label>
           </div>
-          <button id="button" type="submit" class="btn btn-primary btn-block">Submit</button>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="medium" id="medium">
+              Medium $15
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="large" id="large">
+              Large $20
+            </label>
+          </div>
+          <h5>Toppings:</h5>
+          <input type="checkbox" name="pizzaTopping" value="pepperoni"> Pepperoni
+          <input type="checkbox" name="pizzaTopping" value="sausage"> Sausage
+          <input type="checkbox" name="pizzaTopping" value="mushrooms"> Mushrooms
+          <div>
+            <button class="btn btn-danger" type="submit">Submit Order</button>
+          </div>
         </form>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div id="show-pizza-selection">
-            <p>Size: <span class="size-choice"></span></p>
-            <p>Toppings: <span class="toppings-choice"></span></p>
-          </div>
+        <div class="orderConfirm">
+          <h5>Your Order:</h5>
+          <p>You ordered a <span id="sizeChoice"></span> pizza with the following toppings:
+            <span id="toppingsChoice"></span>
+            <span id="costOutput"></span>
+          </p>
         </div>
       </div>
     </div>
   </div>
-</body>
 
-</html>
+</body>

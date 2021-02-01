@@ -1,37 +1,47 @@
-// Business logic for pizzaria
-function pizza(size, topping1, topping2, topping3) {
-  this.size = size;
-  this.topping1 = topping1;
-  this.topping2 = topping2;
-  this.topping3 = topping3;
+// Business Logic
+function Pizza(size, toppings) {
+  this.size = size,
+    this.toppings = toppings,
+    this.price = 0
 }
-
-reciept.prototype.toppings = function () {
-  if (this.topping1 === "topping1") {
-    this.price += 1.00;
+Pizza.prototype.calculateSize = function (size) {
+  if (this.size === "small") {
+    this.price += 6;
+  } else if (this.size === "medium") {
+    this.price += 8;
+  } else {
+    this.price += 10;
   }
-  if (this.topping2 === "topping2") {
-    this.price += 1.00;
+}
+Pizza.prototype.calculateToppings = function (toppings) {
+  for (let i = 0; i < this.toppings.length; i++) {
+    this.price += 2;
   }
-  if (this.topping3 === "topping3") {
-    this.price += 1.00;
-  }
+};
 
-  reciept.prototype.size = function () {
-    if (this.small === "small") {
-      this.price += 3.00;
-    }
-    if (this.medium === "medium") {
-      this.price += 6.00;
-    }
-    if (this.large === "large") {
-      this.price += 9.00;
-    }
-  };
+// UI Logic:
 
-  Pizza.prototype.totalCost = function () {
-    return (this.sizePrice + this.toppingOne + this.toppingTwo)
-  }
+$(document).ready(function () {
+  $("form#order-form").submit(function (event) {
+    event.preventDefault();
 
-  //business logic for users
+    let sizeChoice = $("input:radio[name=size]:checked").val();
+    let toppingChoice = $("input:checkbox[name=pizzaTopping]:checked");
+    let toppingsArray = [];
+    toppingChoice.each(function () {
+      toppingsArray.push($(this).val());
+    })
 
+    let userPizza = new Pizza(sizeChoice, toppingsArray);
+    userPizza.calculateSize();
+    userPizza.calculateToppings();
+
+    $(".orderConfirm").show();
+    $("#sizeChoice").text(userPizza.size);
+
+    let toppingString = (userPizza.toppings).join(", ");
+    $("#toppingsChoice").text(toppingString);
+    $("#costOutput").text("$" + userPizza.price);
+
+  })
+});
