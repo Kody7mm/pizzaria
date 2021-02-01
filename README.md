@@ -1,7 +1,7 @@
 # Portfolio
 
 ### _By Kody Gordon_
-### _Pizza Place_
+### _Pizzaria_
 
 ## Technologies
 * HTML
@@ -9,6 +9,8 @@
 * Javascript
 * Bootstrap
 * jQuery
+* Github
+* Visual Studio Code
 
 ## Description
 This website was built to allow user to order a pizza online!
@@ -28,7 +30,7 @@ Expect: (Pizza.pizzaPrice["large"].toEqual([totalCost + 10]));
 
 Describe: Pizza.prototype.calculateToppings 
 Test: It will add $1 for each topping chosen in the toppings array. Code: pizza.calculateToppings(); 
-Expect: (Pizza.pizzaPrice.toppings["pepperoni"].toEqual([2]));
+Expect: (Pizza.pizzaPrice.toppings["pepperoni"].toEqual([1]));
 
 ## Known Bugs
 * Design will be improved
