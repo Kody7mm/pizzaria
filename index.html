@@ -12,45 +12,41 @@
 <body>
   <div class="container">
     <div class="form">
-      <div class="col-md-8 mb-5">
-        <h3>Pizza Online Order</h3>
-        <h5>Place Your Order Below:</h5>
-        <hr>
-        <form id="order-form" id="size">
-          <h5>Size:</h5>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="small" id="small">
-              Small $10
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="medium" id="medium">
-              Medium $15
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="large" id="large">
-              Large $20
-            </label>
-          </div>
-          <h5>Toppings:</h5>
-          <input type="checkbox" name="pizzaTopping" value="pepperoni"> Pepperoni
-          <input type="checkbox" name="pizzaTopping" value="sausage"> Sausage
-          <input type="checkbox" name="pizzaTopping" value="mushrooms"> Mushrooms
-          <div>
-            <button class="btn btn-danger" type="submit">Submit Order</button>
-          </div>
-        </form>
-        <div class="orderConfirm">
-          <h5>Your Order:</h5>
-          <p>You ordered a <span id="sizeChoice"></span> pizza with the following toppings:
-            <span id="toppingsChoice"></span>
-            <span id="costOutput"></span>
-          </p>
+      <h3>Pizza Online Order</h3>
+      <form id="order-form" id="size">
+        <h5>Size:</h5>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="small" id="small">
+            Small $10
+          </label>
         </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="medium" id="medium">
+            Medium $15
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="large" id="large">
+            Large $20
+          </label>
+        </div>
+        <h5>Toppings:</h5>
+        <input type="checkbox" name="pizzaTopping" value="pepperoni"> Pepperoni $1
+        <input type="checkbox" name="pizzaTopping" value="sausage"> Sausage $1
+        <input type="checkbox" name="pizzaTopping" value="mushrooms"> Mushrooms $1
+        <div>
+          <button class="btn btn-danger" type="submit">Submit Order</button>
+        </div>
+      </form>
+      <div class="orderConfirm">
+        <h5>Your Order:</h5>
+        <p>You ordered a <span id="sizeChoice"></span> pizza with the following toppings:
+          <span id="toppingsChoice"></span>
+          <span id="costOutput"></span>
+        </p>
       </div>
     </div>
   </div>
